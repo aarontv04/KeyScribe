@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900;
+  }
+}
+
+.abcjs-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Custom styles for ABCJS in dark mode */
+.abcjs-container svg {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.abcjs-container svg path,
+.abcjs-container svg text {
+  fill: white;
+}

@@ -1,0 +1,147 @@
+/* MusicSheet.css */
+.abcjs-container {
+  /* Override abcjs default white background if necessary */
+  background-color: transparent !important; /* Or your desired dark background */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Music visualization container */
+.music-sheet-visual {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.5) rgba(30, 41, 59, 0.4);
+  padding: 5px 0;
+}
+
+/* Improve line break behavior */
+.abcjs-container .abcjs-staff-group {
+  max-width: 100%;
+  margin-bottom: 20px !important;
+  display: block;
+}
+
+/* Force new stave on line breaks */
+.abcjs-container .abcjs-l0, 
+.abcjs-container .abcjs-l1 {
+  display: block !important;
+}
+
+/* Custom scrollbar for webkit browsers */
+.music-sheet-visual::-webkit-scrollbar {
+  height: 8px;
+}
+
+.music-sheet-visual::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 4px;
+}
+
+.music-sheet-visual::-webkit-scrollbar-thumb {
+  background-color: rgba(96, 165, 250, 0.5);
+  border-radius: 4px;
+}
+
+/* SVG container */
+.abcjs-container svg {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Make sure SVG elements render correctly on dark background */
+.abcjs-container svg .abcjs-note,
+.abcjs-container svg .abcjs-rest,
+.abcjs-container svg .abcjs-clef,
+.abcjs-container svg .abcjs-time-signature,
+.abcjs-container svg .abcjs-key-signature,
+.abcjs-container svg .abcjs-bar-line,
+.abcjs-container svg path,
+.abcjs-container svg text {
+  fill: #ffffff; /* Bright white for better visibility */
+  stroke: #ffffff; /* Bright white for lines */
+  stroke-width: 1.2px; /* Slightly thicker lines */
+}
+
+/* Staff lines */
+.abcjs-container svg .abcjs-staff {
+  fill: none; /* Staff lines shouldn't be filled */
+  stroke: #c0c0c0; /* Lighter gray for staff lines */
+  stroke-width: 1.2px; /* Slightly thicker staff lines */
+}
+
+/* Voice lines and separators */
+.abcjs-container svg .abcjs-staff-extra {
+  stroke: #c0c0c0;
+  stroke-width: 1px;
+}
+
+/* Title, composer, etc. text styling */
+.abcjs-container svg .abcjs-title,
+.abcjs-container svg .abcjs-composer,
+.abcjs-container svg .abcjs-header {
+  fill: #ffffff; /* White for headers */
+  font-weight: bold;
+  font-size: 18px; /* Larger font */
+}
+
+/* Tempo text */
+.abcjs-container svg .abcjs-tempo {
+   fill: #ffffff; /* White for tempo */
+   font-style: italic;
+   font-size: 16px; /* Larger font */
+}
+
+/* Note highlighting on hover (using add_classes: true) */
+.abcjs-container svg .abcjs-note:hover,
+.abcjs-container svg .abcjs-rest:hover {
+   cursor: pointer;
+   filter: brightness(1.8);
+}
+
+/* Cursor for playback indication */
+.abcjs-container .abcjs-cursor {
+  background-color: rgba(96, 165, 250, 0.4); /* Semi-transparent blue cursor */
+  box-shadow: 0 0 5px rgba(96, 165, 250, 0.7);
+  border-radius: 3px;
+}
+
+/* Measure lines */
+.abcjs-container svg .abcjs-bar {
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+/* Measure numbers */
+.abcjs-container svg .abcjs-measure-number {
+  fill: #ffffff;
+  font-size: 12px;
+}
+
+/* Voice labels */
+.abcjs-container svg .abcjs-voice-name {
+  fill: #60a5fa;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Make ledger lines more visible */
+.abcjs-container svg .abcjs-ledger {
+  stroke: #ffffff;
+  stroke-width: 1.3px;
+}
+
+/* Highlighting effect for selected notes */
+.abcjs-container svg .abcjs-note.highlight {
+  fill: #60a5fa;
+  stroke: #60a5fa;
+  filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.7));
+}
+
+/* Chord symbols */
+.abcjs-container svg .abcjs-chord {
+  fill: #60a5fa;
+  font-size: 14px;
+} 
